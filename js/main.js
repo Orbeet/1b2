@@ -19,19 +19,13 @@ document.addEventListener("DOMContentLoaded", () => {
     setTimeout(function (){
         document.querySelector('.site-main').classList.add('animated')
     }, 0)
-
-    mobSidebar(sidebarMenu);
-    mobSidebar(sidebarAnchorMenu);
-
-    window.addEventListener('resize orientationchange',function (){
-        mobSidebar(sidebarMenu);
-        mobSidebar(sidebarAnchorMenu);
-    });
 });
+
 
 jQuery(document).ready(function($){
 
     // Behavior smooth when click menu
+
     const menuLinks = document.querySelectorAll('.menu__link[data-goto]');
     if (menuLinks.length > 0) {
         menuLinks.forEach(menuLink => {
@@ -105,90 +99,143 @@ jQuery(document).ready(function($){
         // Remove the "focus" class from all elements .pll-parent-menu-item
         jQuery('.pll-parent-menu-item').removeClass('focus');
     });
+});
 
 
-    $('.contacts-form__btn').click(function(event) {
-        event.preventDefault();
-        var isValid = true;
+// email form, validation, send
+document.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById('form');
+    const successMessage = document.querySelector('.success-message');
+    
+    form.addEventListener('submit', formSend);
 
-        $('.contacts-form-field').removeClass('error');
-        $('.contacts-form__error').text('');
+    async function formSend(e) {
+        e.preventDefault();
 
-        if ($('#name').val() === '') {
-            $('#name').addClass('error');
-            $('#name').siblings('.contacts-form__error').text($('#name').data('empty')).show();
-            isValid = false;
-        } else if (!/^[A-Za-zА-Яа-яЁёіїІЇҐґ\s-ØøÅåÆæ]*$/.test($('#name').val())) {
-            $('#name').addClass('error');
-            $('#name').siblings('.contacts-form__error').text($('#name').data('digits')).show();
-            isValid = false;
-        } else {
-            $('#name').removeClass('error');
-        }
+        let error = formValidate(form);
 
-        if ($('#email').val() === '') {
-            $('#email').addClass('error');
-            $('#email').siblings('.contacts-form__error').text($('#email').data('empty')).show();
-            isValid = false;
-        } else if (!isValidEmail($('#email').val())) {
-            $('#email').addClass('error');
-            $('#email').siblings('.contacts-form__error').text($('#email').data('valid')).show();
-            isValid = false;
-        } else {
-            $('#email').removeClass('error');
-        }
+        let formData = new FormData(form);
 
-        if ($('#message').val() === '') {
-            $('#message').addClass('error');
-            $('#message').siblings('.contacts-form__error').text($('#message').data('empty')).show();
-            isValid = false;
-        } else {
-            $('#message').removeClass('error');
-        }
-
-        // If the form has passed validation, you can send the data
-        if (isValid) {
-            // Your code to submit the form with AJAX
-            //
-            // If there are no errors, we send the given form
-            var formData = $(this).serialize();
-            var form = $(this).closest('form');
-            var actUrl = form.attr('action');
-
-            $.ajax({
-                type: "post",
-                url: actUrl, // Replace this with the URL of your server script
-                data: formData,
-                dataType: "html",
-                success: function(response) {
-                    if (response.success) {
-                        // The form was sent successfully, we can do anything
-                        $(".success-message").addClass("active");
-                        $('.contacts-form')[0].reset();
-                        setTimeout(function (){
-                            $(".success-message").removeClass('active')
-                        }, 2000)
-                    } else {
-                        // display validation errors
-                        var validationErrors = response.errors;
-                        for (var key in validationErrors) {
-                            $("#" + key).closest('.contacts-form__item').addClass('error');
-                            $("#" + key).siblings('.contacts-form__error').text(validationErrors[key]).show();
-                        }
-                    }
-                },
-                error: function(xhr, status, error) {
-                    // error occurred when sending the request
-                    $("#formResponse").html("Error: " + error);
-                },
+        if (error === 0) {
+            form.classList.add('_sending');
+            let response = await fetch('sendmail.php', {
+                method: 'POST',
+                body: formData
             });
+            if (response.ok) {
+                successMessage.classList.add("active");
+                form.reset();
+                form.classList.remove('_sending');
+                setTimeout(function (){
+                    successMessage.classList.remove('active')
+                }, 4000)
+            }else {
+                alert('Error');
+                form.classList.remove('_sending');
+            }
+
+        } else {
+            // alert('Field must be filled in');
         }
-    });
+    }
+
+    function formValidate (form) {
+        let error = 0;
+        let formReq = document.querySelectorAll('._req');
+
+        for (let index = 0; index < formReq.length; index++) {
+            const input = formReq[index];
+            formRemoveError(input);
+
+            if (input.classList.contains('_email')) {
+                if (emailTest(input)){
+                    formAddError(input);
+                    error++;
+                }
+            }else{
+                if (input.value === '') {
+                    formAddError(input);
+                    error++;
+                }
+            }
+        }
+        return error;
+
+    }
+
+    
+
+    function formAddError(input) {
+        input.parentElement.classList.add('_error');
+        input.classList.add('_error');
+    }
+    function formRemoveError(input) {
+        input.parentElement.classList.remove('_error');
+        input.classList.remove('_error');
+    }
+
+    // check valid email
+    function emailTest(input) {
+        return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(input.value);
+    }
 
     function isValidEmail(email) {
         // Function for checking the validity of the email address (you can develop your own logic)
-        var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+        var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,8}$/;
         return emailPattern.test(email);
     }
 
 });
+
+const nameError = document.querySelector('.name-error');
+    const emailError = document.querySelector('.email-error');
+    const messageError = document.querySelector('.message-error');
+
+    function validateName() {
+        const name = document.getElementById('name').value;
+
+        if (name.length == 0) {
+            nameError.innerHTML = 'Name is required';
+            return false;
+        }
+        if (!name.match(/^[A-Za-z ]*$/)) {
+            nameError.innerHTML = 'Write only Letters';
+            return false;
+        }
+        
+        nameError.innerHTML = '<p class="form-icon">valid</p>';
+       
+        return true;
+    }
+
+    function validateEmail() {
+        const email = document.getElementById('email').value;
+
+        if (email.length == 0) {
+            emailError.innerHTML = 'Email is required';
+            return false;
+        }
+        if (!email.match(/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,8}$/)) {
+            emailError.innerHTML = 'Email Invalid';
+            return false;
+        }
+        
+        emailError.innerHTML = '<p class="form-icon">valid</p>';
+       
+        return true;
+    }
+
+    function validateMessage() {
+        const message = document.getElementById('message').value;
+
+        if (message.length == 0) {
+            messageError.innerHTML = 'Message is required';
+            return false;
+        }else {
+            
+            messageError.innerHTML = '<p class="form-icon">valid</p>';
+            
+            return true;
+        }
+    }
+ 

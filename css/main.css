@@ -2173,13 +2173,6 @@ a {
   display: flex;
   width: -moz-fit-content;
   width: fit-content;
-  margin-left: 1px;
-}
-
-@media (max-width: 500px) {
-  .opportunities .btn-wrap {
-    margin-left: auto;
-  }
 }
 
 .opportunities-text {
@@ -2187,13 +2180,7 @@ a {
   line-height: 1.2;
   font-weight: 600;
   text-transform: uppercase;
-  /* text-align: center; */
-}
-
-@media (max-width: 500px) {
-  .opportunities-text {
-    text-align: center;
-  }
+  text-align: center;
 }
 
 @media (max-width: 1440px) {
@@ -3261,6 +3248,9 @@ a {
   color: #D03333;
   left: 0;
 }
+.form-icon {
+  color: seagreen;
+}
 
 @media (max-width: 1179px) {
   .contacts-form__error {
@@ -3985,4 +3975,32 @@ a {
   .error-content {
     padding: 60px 20px;
   }
+}
+
+/* for using email */
+.form__input:focus {
+  /* border-bottom: 1px solid #7a956b; */
+}
+.form__input._error {
+  /* border-bottom: 1px solid pink; */
+  border-bottom: 1px solid crimson;
+}
+.form__body {
+  position: relative;
+}
+.form__body::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(51, 51, 51, 0.7) url('../img/loading.gif') center / 50px no-repeat;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s ease 0s;
+}
+.form__body._sending::after {
+  opacity: 1;
+  visibility: visible;
 }
