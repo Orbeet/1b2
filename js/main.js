@@ -6,9 +6,9 @@ if (window.localStorage) {
         document.querySelector(".modal").classList.remove('active')
     }
 }
-closeButtons.forEach(function(item){
+closeButtons.forEach(function (item) {
 
-    item.addEventListener('click', function(e) {
+    item.addEventListener('click', function (e) {
         var parentModal = this.closest('.modal');
         parentModal.classList.remove('active');
         localStorage.setItem("userAgreed", true);
@@ -16,13 +16,13 @@ closeButtons.forEach(function(item){
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-    setTimeout(function (){
+    setTimeout(function () {
         document.querySelector('.site-main').classList.add('animated')
     }, 0)
 });
 
 
-jQuery(document).ready(function($){
+jQuery(document).ready(function ($) {
 
     // Behavior smooth when click menu
 
@@ -42,7 +42,7 @@ jQuery(document).ready(function($){
                     top: gotoBlockValue,
                     behavior: "smooth"
                 });
-                e.preventDefault();
+                // e.preventDefault();
             }
         }
     }
@@ -54,34 +54,34 @@ jQuery(document).ready(function($){
         jQuery('#primary-menu').append(jQuery('.pll-parent-menu-item'))
     }
 
-    const siteNavigation = document.getElementById( 'site-navigation' );
-    const siteMenu = document.querySelector( '.menu-toggle + div' );
+    const siteNavigation = document.getElementById('site-navigation');
+    const siteMenu = document.querySelector('.menu-toggle + div');
 
     // Return early if the navigation doesn't exist.
-    if ( ! siteNavigation ) {
+    if (!siteNavigation) {
         return;
     }
 
-    const button = siteNavigation.getElementsByTagName( 'button' )[ 0 ];
+    const button = siteNavigation.getElementsByTagName('button')[0];
     $("#primary-menu li:not(.pll-parent-menu-item):not(.lang-item) a").click(
         function () {
-            siteNavigation.classList.remove( 'toggled' );
-            siteMenu.classList.remove( 'opened' );
-            button.setAttribute( 'aria-expanded', 'false' );
+            siteNavigation.classList.remove('toggled');
+            siteMenu.classList.remove('opened');
+            button.setAttribute('aria-expanded', 'false');
         }
     )
-    jQuery( window ).on( "orientationchange",function () {
-        siteNavigation.classList.remove( 'toggled' );
-        siteMenu.classList.remove( 'opened' );
-        button.setAttribute( 'aria-expanded', 'false' );
+    jQuery(window).on("orientationchange", function () {
+        siteNavigation.classList.remove('toggled');
+        siteMenu.classList.remove('opened');
+        button.setAttribute('aria-expanded', 'false');
     })
-    jQuery( window ).on( "resize", function() {
+    jQuery(window).on("resize", function () {
         if (window.innerWidth < 1180) {
             jQuery('.mobile-nav').append(jQuery('.pll-parent-menu-item'))
         } else {
             jQuery('#primary-menu').append(jQuery('.pll-parent-menu-item'))
         }
-    } );
+    });
 
     jQuery('.pll-parent-menu-item').on('click', function (e) {
         // Turn the "focus" class on or off on each click
@@ -106,7 +106,7 @@ jQuery(document).ready(function($){
 document.addEventListener('DOMContentLoaded', function () {
     const form = document.getElementById('form');
     const successMessage = document.querySelector('.success-message');
-    
+
     form.addEventListener('submit', formSend);
 
     async function formSend(e) {
@@ -126,10 +126,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 successMessage.classList.add("active");
                 form.reset();
                 form.classList.remove('_sending');
-                setTimeout(function (){
+                setTimeout(function () {
                     successMessage.classList.remove('active')
                 }, 4000)
-            }else {
+            } else {
                 alert('Error');
                 form.classList.remove('_sending');
             }
@@ -139,7 +139,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    function formValidate (form) {
+    function formValidate(form) {
         let error = 0;
         let formReq = document.querySelectorAll('._req');
 
@@ -148,11 +148,11 @@ document.addEventListener('DOMContentLoaded', function () {
             formRemoveError(input);
 
             if (input.classList.contains('_email')) {
-                if (emailTest(input)){
+                if (emailTest(input)) {
                     formAddError(input);
                     error++;
                 }
-            }else{
+            } else {
                 if (input.value === '') {
                     formAddError(input);
                     error++;
@@ -163,7 +163,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     }
 
-    
+
 
     function formAddError(input) {
         input.parentElement.classList.add('_error');
@@ -188,54 +188,76 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 const nameError = document.querySelector('.name-error');
-    const emailError = document.querySelector('.email-error');
-    const messageError = document.querySelector('.message-error');
+const emailError = document.querySelector('.email-error');
+const messageError = document.querySelector('.message-error');
 
-    function validateName() {
-        const name = document.getElementById('name').value;
+function validateName() {
+    const name = document.getElementById('name').value;
 
-        if (name.length == 0) {
-            nameError.innerHTML = 'Name is required';
-            return false;
-        }
-        if (!name.match(/^[A-Za-z ]*$/)) {
-            nameError.innerHTML = 'Write only Letters';
-            return false;
-        }
-        
-        nameError.innerHTML = '<p class="form-icon">valid</p>';
-       
+    if (name.length == 0) {
+        nameError.innerHTML = 'Name is required';
+        return false;
+    }
+    if (!name.match(/^[A-Za-z ]*$/)) {
+        nameError.innerHTML = 'Write only Letters';
+        return false;
+    }
+
+    nameError.innerHTML = '<p class="form-icon">valid</p>';
+
+    return true;
+}
+
+function validateEmail() {
+    const email = document.getElementById('email').value;
+
+    if (email.length == 0) {
+        emailError.innerHTML = 'Email is required';
+        return false;
+    }
+    if (!email.match(/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,8}$/)) {
+        emailError.innerHTML = 'Email Invalid';
+        return false;
+    }
+
+    emailError.innerHTML = '<p class="form-icon">valid</p>';
+
+    return true;
+}
+
+function validateMessage() {
+    const message = document.getElementById('message').value;
+
+    if (message.length == 0) {
+        messageError.innerHTML = 'Message is required';
+        return false;
+    } else {
+
+        messageError.innerHTML = '<p class="form-icon">valid</p>';
+
         return true;
     }
+}
 
-    function validateEmail() {
-        const email = document.getElementById('email').value;
+// smooth scroll JQuery
+var $page = $('html, body');
+$('a[href*="#"]').click(function() {
+    $page.animate({
+        scrollTop: $($.attr(this, 'href')).offset().top
+    }, 400);
+    return false;
+});
 
-        if (email.length == 0) {
-            emailError.innerHTML = 'Email is required';
-            return false;
-        }
-        if (!email.match(/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,8}$/)) {
-            emailError.innerHTML = 'Email Invalid';
-            return false;
-        }
-        
-        emailError.innerHTML = '<p class="form-icon">valid</p>';
-       
-        return true;
+
+const sidebarMenu = document.querySelectorAll('.sidebar-title');
+const sidebarAnchorMenu = document.querySelectorAll('.page-with-sidebar-heading');
+
+function mobSidebar(button){
+    if (window.innerWidth < 501) {
+        button.forEach(function(item){
+            item.addEventListener('click', function (){
+                this.classList.toggle('active');
+            })
+        })
     }
-
-    function validateMessage() {
-        const message = document.getElementById('message').value;
-
-        if (message.length == 0) {
-            messageError.innerHTML = 'Message is required';
-            return false;
-        }else {
-            
-            messageError.innerHTML = '<p class="form-icon">valid</p>';
-            
-            return true;
-        }
-    }
- 
+}
