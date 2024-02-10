@@ -261,3 +261,17 @@ function mobSidebar(button){
         })
     }
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+    setTimeout(function (){
+        document.querySelector('.site-main').classList.add('animated')
+    }, 0)
+
+    mobSidebar(sidebarMenu);
+    mobSidebar(sidebarAnchorMenu);
+
+    window.addEventListener('resize orientationchange',function (){
+        mobSidebar(sidebarMenu);
+        mobSidebar(sidebarAnchorMenu);
+    });
+});
