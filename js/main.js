@@ -1477,7 +1477,7 @@ const policyTexts = {
 		ar: "موقعنا",
 		es: "NUESTRA PÁGINA WEB",
 	},
-    "policy_page-10": {
+    "policy_page-p10": {
 		en: "We use cookies to collect information for visitors to our website.",
 		ru: "Мы используем файлы cookie для сбора информации о посетителях нашего сайта.",
 		pt: "Utilizamos cookies para coletar informações dos visitantes do nosso site.",
