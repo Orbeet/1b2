@@ -19,7 +19,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./css/main.css" media="all">
+    <link rel="stylesheet" href="./css/main.css" media="all" id="theme">
     <script src="./js/jquery.min.js" id="jquery-core-js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <script src="./js/jquery-migrate.min.js" id="jquery-migrate-js"></script>
@@ -96,11 +96,11 @@
                                         </div>
                                         <div class="options">
                                           <ul class="options-list">
-                                            <li data-lang="en" data-btn="en">English</li>
-                                            <li data-lang="ar" data-btn="ar">عربي</li>
-                                            <li data-lang="pt" data-btn="pt">Portugal</li>
-                                            <li data-lang="ru" data-btn="ru">Русский</li>
-                                            <li data-lang="es" data-btn="es">Español</li>
+                                            <li data-lang="en" data-btn="en" id="enBtn" class="langBtn">English</li>
+                                            <li dir="auto" data-lang="ar" data-btn="ar" id="arBtn">عربي</li>
+                                            <li data-lang="pt" data-btn="pt" id="ptBtn" class="langBtn">Portugal</li>
+                                            <li data-lang="ru" data-btn="ru" id="ruBtn" class="langBtn">Русский</li>
+                                            <li data-lang="es" data-btn="es" id="esBtn" class="langBtn">Español</li>
                                           </ul>
                                           <div id="trans-circle"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120"> <g id="circle" fill="none" fill-rule="evenodd"> <circle id="bg" cx="60" cy="60" r="60" fill="#FFFFFF"/> </g> </svg>
                                         </div>
@@ -130,34 +130,34 @@
         <main class="site-main">
             <section class="typical-page">
                 <div class="container">
-                    <h2 data-lang="terms_page-title">Terms and conditions</h2>
-                    <h3 class="wp-block-heading" data-lang="terms_page-partnership">PARTNERSHIP AGREEMENT (HEREINAFTER REFERRED TO AS AGREEMENT) GENERAL
+                    <h2 dir="auto" data-lang="terms_page-title">Terms and conditions</h2>
+                    <h3 dir="auto" class="wp-block-heading" data-lang="terms_page-partnership">PARTNERSHIP AGREEMENT (HEREINAFTER REFERRED TO AS AGREEMENT) GENERAL
                         DEFINITIONS</h3>
 
 
 
-                    <p data-lang="terms_page-bettingCompany">Betting company is Internet resource 1xBet (hereinafter referred to as “Company”), where users
+                    <p dir="auto" data-lang="terms_page-bettingCompany">Betting company is Internet resource 1xBet (hereinafter referred to as “Company”), where users
                         are offered online betting facilities.</p>
 
 
 
-                    <p data-lang="terms_page-mainBrand">Main brand of the Company is a set of components that distinguish the Company from the rest,
+                    <p dir="auto" data-lang="terms_page-mainBrand">Main brand of the Company is a set of components that distinguish the Company from the rest,
                         making it easily recognizable among users. The main brand of the Company (hereinafter referred
                         to as the Company’s Brand) for this Affiliate Program is1xBet.</p>
 
 
 
-                    <p data-lang="terms_page-websiteOrResource">Website or resource of the Company (hereinafter also referred to as 1xBet) is one or more
+                    <p dir="auto" data-lang="terms_page-websiteOrResource">Website or resource of the Company (hereinafter also referred to as 1xBet) is one or more
                         websites of the Company containing in full or in part the Company’s Brand in a domain name.</p>
 
 
 
-                    <p data-lang="terms_page-companyProducts">Company’s Products are the service or a set of services offered to the users on the Company’s
+                    <p dir="auto" data-lang="terms_page-companyProducts">Company’s Products are the service or a set of services offered to the users on the Company’s
                         resources.</p>
 
 
 
-                    <p data-lang="terms_page-affiliateProgram">Affiliate Program is a type of cooperation between the Company and the Affiliate, which is
+                    <p dir="auto" data-lang="terms_page-affiliateProgram">Affiliate Program is a type of cooperation between the Company and the Affiliate, which is
                         implemented through the Company’s resources, in particular 1xpartners.com, in which the
                         Affiliate using its resource or resources may advertise the services of the Company and receive
                         remuneration in return. The basic principles of this type of cooperation are set out below and
@@ -166,62 +166,62 @@
 
 
 
-                    <p data-lang="terms_page-webmaster">Affiliate is a webmaster (individual or legal entity) who fulfills the conditions of the
+                    <p dir="auto" data-lang="terms_page-webmaster">Affiliate is a webmaster (individual or legal entity) who fulfills the conditions of the
                         Affiliate Program on 1xpartners.com, the main purpose of which as part of the Affiliate Program
                         is to attract New users to the Company’s resource, as well as promote its products.</p>
 
 
 
-                    <p data-lang="terms_page-p1">Affiliate Account is a personal account of the Affiliate in the Affiliate Program.</p>
+                    <p dir="auto" data-lang="terms_page-p1">Affiliate Account is a personal account of the Affiliate in the Affiliate Program.</p>
 
 
 
-                    <p data-lang="terms_page-p2">New users are the users who previously had no player account on any 1xBet website, were attracted
+                    <p dir="auto" data-lang="terms_page-p2">New users are the users who previously had no player account on any 1xBet website, were attracted
                         by the Affiliate to the Company’s website through special tools, have registered a player
                         account on 1xBet and made the first deposit.</p>
 
 
 
-                    <p data-lang="terms_page-p3">Referral link is a link to the website of the Company which contains the unique identifier of the
+                    <p dir="auto" data-lang="terms_page-p3">Referral link is a link to the website of the Company which contains the unique identifier of the
                         Affiliate.</p>
 
 
 
-                    <p data-lang="terms_page-p4">Earnings are monetary rewards received by the Affiliate as a commission on profit from New users
+                    <p dir="auto" data-lang="terms_page-p4">Earnings are monetary rewards received by the Affiliate as a commission on profit from New users
                         brought by the Affiliate.</p>
 
 
 
-                    <p data-lang="terms_page-p5">Payment is a payment (earnings), which is transferred to the Affiliate from the internal account
+                    <p dir="auto" data-lang="terms_page-p5">Payment is a payment (earnings), which is transferred to the Affiliate from the internal account
                         of the Affiliate Program via an external payment system.</p>
 
 
 
-                    <p data-lang="terms_page-p6">Reporting period is a period of time that can be specified in order for the Affiliate to track
+                    <p dir="auto" data-lang="terms_page-p6">Reporting period is a period of time that can be specified in order for the Affiliate to track
                         the results of its work within the Affiliate Program.</p>
 
 
 
-                    <p data-lang="terms_page-p7">Advertising materials are text, graphic, audio, video and mixed materials of an advertising
+                    <p dir="auto" data-lang="terms_page-p7">Advertising materials are text, graphic, audio, video and mixed materials of an advertising
                         nature, which serve to promote the Company’s products on the Internet.</p>
 
 
 
-                    <h2 class="wp-block-heading" data-lang="terms_page-tersmAgreement">Terms and conditions of the agreement</h2>
+                    <h2 dir="auto" class="wp-block-heading" data-lang="terms_page-tersmAgreement">Terms and conditions of the agreement</h2>
 
 
 
                     <ol>
-                        <li><mark style="background-color:rgba(0, 0, 0, 0);color:#42dfe3"
+                        <li dir="auto"><mark style="background-color:rgba(0, 0, 0, 0);color:#42dfe3"
                                 class="has-inline-color" data-lang="terms_page-ol1">GENERAL PROVISIONS</mark>
                             <ol>
-                                <li data-lang="terms_page-ol1-li1">The Affiliate undertakes to get acquainted with the terms and conditions of the
+                                <li dir="auto" data-lang="terms_page-ol1-li1">The Affiliate undertakes to get acquainted with the terms and conditions of the
                                     Affiliate Program prior to commencement of work with the Company and to accept them.
                                 </li>
 
 
 
-                                <li data-lang="terms_page-ol1-li2">Only a user aged 18 and older can become a member and fulfill the conditions of the
+                                <li dir="auto" data-lang="terms_page-ol1-li2">Only a user aged 18 and older can become a member and fulfill the conditions of the
                                     Affiliate Program.The Company shall not be liable to third parties for Affiliate’s
                                     failure to comply with the clause on majority age. If this clause is violated, the
                                     Company shall have the right to refuse payment of the Earnings to the Affiliate and
@@ -229,20 +229,20 @@
 
 
 
-                                <li data-lang="terms_page-ol1-li3">The Affiliate shall bear the full responsibility for the security of personal data,
+                                <li dir="auto" data-lang="terms_page-ol1-li3">The Affiliate shall bear the full responsibility for the security of personal data,
                                     their storage, including login and password. The Company shall not be responsible
                                     for the loss of personal data by the Affiliate and/or transfer thereof to third
                                     parties.</li>
 
 
 
-                                <li data-lang="terms_page-ol1-li4">Through the Affiliate Program, the Company reserves the right to refuse to cooperate
+                                <li dir="auto" data-lang="terms_page-ol1-li4">Through the Affiliate Program, the Company reserves the right to refuse to cooperate
                                     with any Affiliate, while the Company is not obliged to substantiate its refusal.
                                 </li>
 
 
 
-                                <li data-lang="terms_page-ol1-li5">The Company have the right to make any changes to this Agreement and revise the
+                                <li dir="auto" data-lang="terms_page-ol1-li5">The Company have the right to make any changes to this Agreement and revise the
                                     conditions of cooperation with representative of the Affiliate Program. Wherever
                                     possible, the notice of any significant changes shall be sent to the email address
                                     or via another source of communication provided by the Affiliate in the Affiliate
@@ -251,22 +251,22 @@
 
 
 
-                                <li data-lang="terms_page-ol1-li6">The Affiliate can register with the Affiliate Program only once, and the
+                                <li dir="auto" data-lang="terms_page-ol1-li6">The Affiliate can register with the Affiliate Program only once, and the
                                     re-registration, including as a sub-affiliate is strictly prohibited.</li>
                             </ol>
                         </li>
 
 
 
-                        <li><mark style="background-color:rgba(0, 0, 0, 0);color:#42dfe3"
-                                class="has-inline-color">PLACEMENT OF ADVERTISING MATERIALS</mark>
+                        <li dir="auto"><mark style="background-color:rgba(0, 0, 0, 0);color:#42dfe3"
+                                class="has-inline-color" data-lang="terms_page-ol1-li7">PLACEMENT OF ADVERTISING MATERIALS</mark>
                             <ol>
-                                <li>The cooperation with the Affiliate as part of the Affiliate Program implies the
+                                <li dir="auto" data-lang="terms_page-ol1-li8">The cooperation with the Affiliate as part of the Affiliate Program implies the
                                     placement of Advertising materials on the Affiliate’s resource or resources.</li>
 
 
 
-                                <li>When placing the Advertising materials as part of the cooperation with the Company,
+                                <li dir="auto" data-lang="terms_page-ol1-li9">When placing the Advertising materials as part of the cooperation with the Company,
                                     the Affiliate shall strictly comply with the laws applicable in the country of
                                     placement of Advertising Materials, the requirements of regulators and ethical
                                     standards; use only Advertising materials that have been moderated and approved by
@@ -274,7 +274,7 @@
 
 
 
-                                <li>When an Affiliate prepares their own Advertising materials, it is imperative for the
+                                <li dir="auto" data-lang="terms_page-ol1-li10">When an Affiliate prepares their own Advertising materials, it is imperative for the
                                     Affiliate to provide such Advertising materials for moderation and approval to the
                                     representative of the Affiliate Program. In case of violation of this clause of the
                                     Agreement, the consequences specified in clause 2.8 of the Agreement occur to the
@@ -282,38 +282,38 @@
 
 
 
-                                <li>The Affiliate agrees to monitor the relevance and accuracy of the Advertising
+                                <!-- <li data-lang="terms_page-ol1-li11">The Affiliate agrees to monitor the relevance and accuracy of the Advertising
                                     materials placed on its resource or resources (websites, social networks, instant
                                     messengers, etc.). <br><br>** Irrelevant Advertising materials are:
                                     <ul>
-                                        <li>incorrect conditions for promotions, bonuses and special offers;</li>
+                                        <li data-lang="terms_page-ol1-li12">incorrect conditions for promotions, bonuses and special offers;</li>
 
 
 
-                                        <li>outdated creatives;</li>
+                                        <li data-lang="terms_page-ol1-li13">outdated creatives;</li>
 
 
 
-                                        <li>Advertising materials containing an irrelevant Company’s logo;</li>
+                                        <li data-lang="terms_page-ol1-li14">Advertising materials containing an irrelevant Company’s logo;</li>
 
 
 
-                                        <li>Advertising materials that use the name of the Company or one of its brands
+                                        <li data-lang="terms_page-ol1-li14">Advertising materials that use the name of the Company or one of its brands
                                             and which contain links to competitors’ websites. In case of such a
                                             violation, the Company shall have the right to immediately review the terms
                                             of the Agreement with the Affiliate, while reserving the possibility of
                                             blocking its Affiliate account.</li>
                                     </ul>
-                                </li>
+                                </li> -->
 
 
 
-                                <li>The Affiliate shall be fully and solely responsible for the operation and content of
-                                    the resource or resources where the Advertising materials are placed.</li>
+                                <!-- <li data-lang="terms_page-ol1-li16">The Affiliate shall be fully and solely responsible for the operation and content of
+                                    the resource or resources where the Advertising materials are placed.</li> -->
 
 
 
-                                <li>The Affiliate guarantees and undertakes to prevent placing on its resource or
+                                <li dir="auto" data-lang="terms_page-ol1-li15">The Affiliate guarantees and undertakes to prevent placing on its resource or
                                     resources of any materials that are slanderous, subject to age restrictions,
                                     illegal, harmful, threatening, obscene, racially or ethnically intolerant, or
                                     otherwise undesirable or discriminatory, violent, politically incorrect or otherwise
@@ -322,17 +322,17 @@
 
 
 
-                                <li>The Affiliate may not place any advertising or content promoting the Company’s
+                                <li dir="auto" data-lang="terms_page-ol1-li18">The Affiliate may not place any advertising or content promoting the Company’s
                                     website in countries where it is prohibited, including countries where the situation
                                     is in the settlement process.</li>
 
 
 
-                                <li>The Affiliate cannot use motivated traffic.</li>
+                                <li dir="auto" data-lang="terms_page-ol1-li19">The Affiliate cannot use motivated traffic.</li>
 
 
 
-                                <li>The Company shall not be responsible for any claims of third parties related to the
+                                <li dir="auto" data-lang="terms_page-ol1-li20">The Company shall not be responsible for any claims of third parties related to the
                                     resource or resources of the Affiliate, any products or services related to
                                     it.<br><br>If the Advertising materials are found on the Affiliate’s resource or
                                     resources that violate this Agreement, a warning shall be sent to the Affiliate with
@@ -348,22 +348,22 @@
 
 
 
-                        <li><mark style="background-color:rgba(0, 0, 0, 0);color:#42dfe3"
-                                class="has-inline-color">SOURCES OF TRAFFIC</mark>
+                        <li dir="auto"><mark style="background-color:rgba(0, 0, 0, 0);color:#42dfe3"
+                                class="has-inline-color" data-lang="terms_page-ol3">SOURCES OF TRAFFIC</mark>
                             <ol>
-                                <li>When registering, the Affiliate agrees to provide comprehensive information about
+                                <li dir="auto" data-lang="terms_page-ol3-li1">When registering, the Affiliate agrees to provide comprehensive information about
                                     the sources of traffic it intends to use in cooperation with the Company.</li>
 
 
 
-                                <li>The Affiliate shall be held liable for any intentional concealment of sources of
+                                <li dir="auto" data-lang="terms_page-ol3-li2">The Affiliate shall be held liable for any intentional concealment of sources of
                                     traffic. These actions may lead the Company, through the Affiliate Program, enacting
                                     punitive action which could include blocking of Payments and revising the terms of
                                     cooperation with the Affiliate.</li>
 
 
 
-                                <li>The Company’s Moderation Service shall have control over the compliance of the
+                                <li dir="auto" data-lang="terms_page-ol3-li3">The Company’s Moderation Service shall have control over the compliance of the
                                     sources of traffic used by the Affiliate. The Affiliate can&nbsp;<a
                                         href="http://localhost:63342/affiliate/terms.html?_ijt=m94dqp5vai3ct9ivq9jofe5jco&_ij_reload=RELOAD_ON_SAVE#">contact
                                         Affiliate Program Support</a>&nbsp;for clarification.</li>
@@ -372,11 +372,11 @@
 
 
 
-                        <li><mark style="background-color:rgba(0, 0, 0, 0);color:#42dfe3"
-                                class="has-inline-color">RESTRICTIONS ON THE USE OF THE COMPANY’S INTELLECTUAL PROPERTY
+                        <li dir="auto"><mark style="background-color:rgba(0, 0, 0, 0);color:#42dfe3"
+                                class="has-inline-color" data-lang="terms_page-ol4">RESTRICTIONS ON THE USE OF THE COMPANY’S INTELLECTUAL PROPERTY
                                 OBJECTS</mark>
                             <ol>
-                                <li>The Affiliate is forbidden to fully or partially copy the appearance of the websites
+                                <li dir="auto" data-lang="terms_page-ol4-li1">The Affiliate is forbidden to fully or partially copy the appearance of the websites
                                     or individual landing pages of the main Brand of the Company, as well as websites of
                                     trade names and trademarks registered by the Company. In addition, the websites or
                                     landing pages of the Affiliate shall not give the impression that they are managed
@@ -385,13 +385,13 @@
 
 
 
-                                <li>The Affiliate shall not have the right to use the logos, graphics and marketing
+                                <li dir="auto" data-lang="terms_page-ol4-li2">The Affiliate shall not have the right to use the logos, graphics and marketing
                                     materials of the Company without the consent of the Company’s representatives,
                                     except for materials that are received as part of the Affiliate Program.</li>
 
 
 
-                                <li>The Affiliate agrees not to register or use in part of the website’s address
+                                <li dir="auto" data-lang="terms_page-ol4-li3">The Affiliate agrees not to register or use in part of the website’s address
                                     (domain), its internal pages and mobile applications, any variation of the name of
                                     the main Brand of the Company or other brands of the Company, which includes or
                                     consists of the name of any brand of the Company, or which to an extent of confusion
@@ -400,7 +400,7 @@
 
 
 
-                                <li>The Affiliate shall not have the right to acquire/register/use keywords, search
+                                <li dir="auto" data-lang="terms_page-ol4-li4">The Affiliate shall not have the right to acquire/register/use keywords, search
                                     queries or other identifiers for use in any search systems, portals, advertising
                                     services or other search/reference services that are identical or similar to any
                                     trade names (trademarks) of the Company or of any other brand owned by the Company.
@@ -414,17 +414,17 @@
 
 
 
-                                <li>In case of breach of cl. 4.1 – 4.4 of this Agreement, the Company shall have the
+                                <li dir="auto" data-lang="terms_page-ol4-li5">In case of breach of cl. 4.1 – 4.4 of this Agreement, the Company shall have the
                                     right to review the terms of cooperation with the Affiliate.</li>
                             </ol>
                         </li>
 
 
 
-                        <li><mark style="background-color:rgba(0, 0, 0, 0);color:#42dfe3"
-                                class="has-inline-color">COMPETITION</mark>
+                        <li dir="auto"><mark style="background-color:rgba(0, 0, 0, 0);color:#42dfe3"
+                                class="has-inline-color" data-lang="terms_page-ol5">COMPETITION</mark>
                             <ol>
-                                <li>The Affiliate agrees not to place Advertising Materials and not to distribute
+                                <li dir="auto" data-lang="terms_page-ol5-li1">The Affiliate agrees not to place Advertising Materials and not to distribute
                                     Advertising Materials on behalf of the administration, managers or other employees
                                     of the Company and, in particular, the Affiliate Program. All Advertising materials
                                     and appeals to the customers on behalf of the Company shall be sent from official
@@ -432,19 +432,19 @@
 
 
 
-                                <li>The Affiliate shall not have the right to contact potential customers in any way
+                                <li data-lang="terms_page-ol5-li2">The Affiliate shall not have the right to contact potential customers in any way
                                     that will result in competition between the Affiliate and the Company as to the
                                     promotion of the website or websites.</li>
 
 
 
-                                <li>As means of advertising the Company, the Affiliate is prohibited from using mail
+                                <li data-lang="terms_page-ol5-li3">As means of advertising the Company, the Affiliate is prohibited from using mail
                                     spam, contextual advertising with any of the Company’s Brands and advertising
                                     formats such as clickunder and popunder.</li>
 
 
 
-                                <li>The Affiliate agrees that it will not offer or provide incentives (financial or
+                                <li data-lang="terms_page-ol5-li4">The Affiliate agrees that it will not offer or provide incentives (financial or
                                     other) for registering, making a deposit or taking any action to any potential New
                                     User of the Company without the prior written consent of the Company as part of the
                                     Affiliate Program, except for standard advertising programs that the Company may
@@ -452,30 +452,30 @@
 
 
 
-                                <li>The Affiliate is forbidden to register its own player account with the Company
+                                <li data-lang="terms_page-ol5-li5">The Affiliate is forbidden to register its own player account with the Company
                                     through its Referral link, as well as to conspire with other users.</li>
 
 
 
-                                <li>The Affiliate is prohibited from using cookie-stuffing, namely:<br><br>
-                                    <ul>
-                                        <li>opening the website 1xBet in iframe of size zero, as well as in the
+                                <li data-lang="terms_page-ol5-li6">The Affiliate is prohibited from using cookie-stuffing, namely:<br><br>
+                                    <!-- <ul>
+                                        <li data-lang="terms_page-ol5-li6-1">opening the website 1xBet in iframe of size zero, as well as in the
                                             invisible zone;</li>
 
 
 
-                                        <li>implementing tags, cookie scripts and other similar manipulations.</li>
-                                    </ul>
+                                        <li data-lang="terms_page-ol5-li6-2">implementing tags, cookie scripts and other similar manipulations.</li>
+                                    </ul> -->
                                 </li>
 
 
 
-                                <li>The Affiliate is prohibited from using view-through attribution model as to the
+                                <li data-lang="terms_page-ol5-li7">The Affiliate is prohibited from using view-through attribution model as to the
                                     promotion of the Company’s applications.</li>
 
 
 
-                                <li>In case of violation of cl. 5.1 – 5.7 of this Agreement, the Company reserves the
+                                <li data-lang="terms_page-ol5-li8">In case of violation of cl. 5.1 – 5.7 of this Agreement, the Company reserves the
                                     right to revise the terms of cooperation with the Affiliate and may close the
                                     Affiliate Account.</li>
                             </ol>
@@ -483,17 +483,17 @@
 
 
 
-                        <li><mark style="background-color:rgba(0, 0, 0, 0);color:#42dfe3"
-                                class="has-inline-color">CONFIDENTIAL INFORMATION</mark>
+                        <li dir="auto"><mark style="background-color:rgba(0, 0, 0, 0);color:#42dfe3"
+                                class="has-inline-color" data-lang="terms_page-ol6">CONFIDENTIAL INFORMATION</mark>
                             <ol>
-                                <li>During the term of this Agreement, the Affiliate may be provided with confidential
+                                <li dir="auto" data-lang="terms_page-ol6-li1">During the term of this Agreement, the Affiliate may be provided with confidential
                                     information related to the business of the Company, operations, technologies and the
                                     Affiliate Program (including, for example, Earnings and other commissions received
                                     by the Affiliate as part of the Affiliate Program).</li>
 
 
 
-                                <li>The Affiliate agrees not to disclose or transfer any confidential information to
+                                <li dir="auto" data-lang="terms_page-ol6-li2">The Affiliate agrees not to disclose or transfer any confidential information to
                                     third parties unless the Affiliate has prior written consent from the Company. The
                                     Affiliate shall use confidential information only to achieve the objectives of this
                                     Agreement. The Affiliate’s obligations regarding confidential information shall
@@ -501,7 +501,7 @@
 
 
 
-                                <li>In case of violation of cl. 6.1 – 6.2 of this Agreement, the Company shall have the
+                                <li dir="auto" data-lang="terms_page-ol6-li3">In case of violation of cl. 6.1 – 6.2 of this Agreement, the Company shall have the
                                     right to terminate the Agreement with the Affiliate and apply penalties in
                                     accordance with applicable laws on protection of the confidential information.</li>
                             </ol>
@@ -509,16 +509,16 @@
 
 
 
-                        <li><mark style="background-color:rgba(0, 0, 0, 0);color:#42dfe3"
-                                class="has-inline-color">CONFIDENTIAL INFORMATION</mark>
+                        <li dir="auto"><mark style="background-color:rgba(0, 0, 0, 0);color:#42dfe3"
+                                class="has-inline-color" data-lang="terms_page-ol7">CONFIDENTIAL INFORMATION</mark>
                             <ol>
-                                <li>Earnings of the Affiliate shall not have a fixed value and will depend on the income
+                                <li dir="auto" data-lang="terms_page-ol7-li1">Earnings of the Affiliate shall not have a fixed value and will depend on the income
                                     of the Company received from New users who have registered by the Referral link of
                                     the Affiliate, as well as on the quality of traffic.</li>
 
 
 
-                                <li>Immediately after registration, each new Affiliate receives a fee in the amount of
+                                <li dir="auto" data-lang="terms_page-ol7-li2">Immediately after registration, each new Affiliate receives a fee in the amount of
                                     20 (twenty)% of the net profit of the Company received owing to New users attracted
                                     by the Affiliate for 3 (three) calendar months to increase turnover. Upon the
                                     expiration of the specified period of 3 (three) calendar months, the amount of the
@@ -530,7 +530,7 @@
 
 
 
-                                <li>If within 3 (three) consecutive calendar months the Affiliate not attract more than
+                                <li dir="auto" data-lang="terms_page-ol7-li3">If within 3 (three) consecutive calendar months the Affiliate not attract more than
                                     3 (three) New users, the Company shall have the right (but is not obliged) to change
                                     the terms of cooperation with the Affiliate, including reducing the amount of fee to
                                     be received by the Affiliate, or suspend the operation of the Affiliate account in
@@ -545,10 +545,10 @@
 
 
 
-                        <li><mark style="background-color:rgba(0, 0, 0, 0);color:#42dfe3" class="has-inline-color">FREE
+                        <li dir="auto"><mark style="background-color:rgba(0, 0, 0, 0);color:#42dfe3" class="has-inline-color" data-lang="terms_page-ol8">FREE
                                 PAYMENT</mark>
                             <ol>
-                                <li>The Affiliate can receive Earnings once a week (every Tuesday, for the period of
+                                <li dir="auto" data-lang="terms_page-ol8-li1">The Affiliate can receive Earnings once a week (every Tuesday, for the period of
                                     Monday to Sunday of the previous week, inclusive), but only if it has previously
                                     agreed with the manager of the Сompany the details of payment, as well as if the
                                     earned funds exceed the minimum payment value – $ 30.00 (thirty US dollars only) or
@@ -562,7 +562,7 @@
 
 
 
-                                <li>The Company’s Affiliate Program shall have the right to delay Payments to the
+                                <li dir="auto" data-lang="terms_page-ol8-li2">The Company’s Affiliate Program shall have the right to delay Payments to the
                                     Affiliate for up to 2 (two) months in case of unforeseen technical failures in the
                                     Affiliate Program, as well as if it is necessary to verify the Affiliate and its
                                     traffic sources. In case of delay in the Payment, the Affiliate may clarify the
@@ -573,28 +573,28 @@
 
 
 
-                        <li><mark style="background-color:rgba(0, 0, 0, 0);color:#42dfe3"
-                                class="has-inline-color">DISPUTE SETTLEMENT PROCEDURE</mark>
+                        <li dir="auto"><mark style="background-color:rgba(0, 0, 0, 0);color:#42dfe3"
+                                class="has-inline-color" data-lang="terms_page-ol9">DISPUTE SETTLEMENT PROCEDURE</mark>
                             <ol>
-                                <li>The Affiliate may challenge any decisions of the representatives of the Affiliate
+                                <li dir="auto" data-lang="terms_page-ol9-li1">The Affiliate may challenge any decisions of the representatives of the Affiliate
                                     Program. For this purpose, the Affiliate shall contact the Affiliate Program Support
                                     Service and state its arguments.</li>
 
 
 
-                                <li>All information shall be provided by the Affiliates only in writing to the official
+                                <li dir="auto" data-lang="terms_page-ol9-li2">All information shall be provided by the Affiliates only in writing to the official
                                     e-mail of the Affiliate Program Support Service. The contact details of the Support
                                     Service are given on the website of the Affiliate Program.</li>
 
 
 
-                                <li>The Affiliate Program Support Service shall have the right to refuse to consider a
+                                <li dir="auto" data-lang="terms_page-ol9-li3">The Affiliate Program Support Service shall have the right to refuse to consider a
                                     complaint if the Affiliate fails to provide evidence of the absence of a violation.
                                 </li>
 
 
 
-                                <li>Subsequent to considering the complaint, any decisions made by the Company regarding
+                                <li data-lang="terms_page-ol9-li4">Subsequent to considering the complaint, any decisions made by the Company regarding
                                     the 1xBet Affiliate Program are final and not subject to revision. The Company
                                     reserves the right to delete any communications containing profanity, insults,
                                     incitement to violence or false accusations, and, to duly suspend cooperation with
@@ -615,12 +615,12 @@
                     </a>
                     <div class="site-footer-menu site-footer__menu">
                         <ul class="site-footer-menu-list">
-                            <li class="site-footer-menu-list-item site-footer-menu-list__item">
-                                <a href="./terms-and-conditions.html"
+                            <li dir="auto" class="site-footer-menu-list-item site-footer-menu-list__item">
+                                <a dir="auto" data-lang="terms_page-terms2" href="./terms-and-conditions.html"
                                     class="site-footer-menu-list-item-link">Terms and conditions</a>
                             </li>
-                            <li class="site-footer-menu-list-item site-footer-menu-list__item">
-                                <a href="./privacy-police.html" class="site-footer-menu-list-item-link">Privacy
+                            <li dir="auto" class="site-footer-menu-list-item site-footer-menu-list__item">
+                                <a dir="auto" data-lang="terms_page-policy" href="./privacy-police.html" class="site-footer-menu-list-item-link">Privacy
                                     Policy</a>
                             </li>
                             <li
@@ -672,18 +672,18 @@
                     </div>
                 </div>
                 <div class="site-footer-bottom">
-                    <p class="site-footer-copyright">Copyright © 2007-2024 «Partners-1xBet». All rights reserved.</p>
-                    <a href="mailto:support@1xpartners.com" class="site-footer-email">support@1xpartners.com</a>
+                    <p dir="auto" class="site-footer-copyright">Copyright © 2007-2024 «Partners-1xBet». All rights reserved.</p>
+                    <a dir="auto" href="mailto:support@1xpartners.com" class="site-footer-email">support@1xpartners.com</a>
                 </div>
             </div>
             <div class="modal">
                 <div class="container modal__container">
                     <div class="modal-window modal__window">
                         <div class="modal-window-content">
-                            <p class="modal-window-text modal-window__text">Partners-1xBet Partners-1xBet may use
+                            <p dir="auto" class="modal-window-text modal-window__text">Partners-1xBet Partners-1xBet may use
                                 cookies to store your details and collect information to optimize the site and tailor
                                 our marketing to your permissions and to suit your interests. By continuing to use the
-                                site you consent to the use of cookies. <a href="./cookies.html"
+                                site you consent to the use of cookies. <a dir="auto" href="./cookies.html"
                                     class="modal-window-link">Find out more cookies</a></p>
                             <button type="button"
                                 class="btn btn--green modal-window-close modal-window__close">ok</button>
